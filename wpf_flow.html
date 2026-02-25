@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPF Flow Editor | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Drag-and-drop image processing pipeline designer inspired by LabVIEW." />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #06b6d4;
+            --secondary: #0ea5e9;
+            --bg: #0a0e27;
+            --bg-alt: #141829;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        header {
+            position: relative;
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #050812 0%, #0f172a 50%, #1a2332 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        header h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        header p {
+            position: relative;
+            z-index: 1;
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+        nav.navbar {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        nav.navbar a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav.navbar a:hover {
+            color: var(--primary);
+        }
+        nav.navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        nav.navbar a:hover::after {
+            width: 100%;
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        section.container {
+            background: linear-gradient(180deg, var(--card-bg) 0%, var(--bg-alt) 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 50px;
+        }
+        h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: var(--text);
+        }
+        p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.15);
+        }
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        li {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        li::before {
+            content: '▸';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        footer.footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 32px; }
+            section.container { padding: 30px; }
+            h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>WPF Flow Editor</h1>
+    <p>Visual Image Processing Pipeline Designer</p>
+    <nav class="navbar">
+        <a href="index.html">Portfolio</a>
+        <a href="index.html#projects">All Projects</a>
+    </nav>
+</header>
+<main>
+    <section class="container">
+        <h2>Project Overview</h2>
+        <img src="Icon/1 (5).jpg" alt="WPF Flow Editor drag-and-drop interface" />
+        <p>A desktop application that empowers users to design complex image processing pipelines without writing code. Built on C# and WPF, the editor combines visual programming paradigms inspired by LabVIEW with OpenCV-based processing blocks.</p>
+        
+        <h3>Core Technologies</h3>
+        <ul>
+            <li><strong>C# 12</strong> – High-performance desktop application</li>
+            <li><strong>WPF (Windows Presentation Foundation)</strong> – Modern UI framework</li>
+            <li><strong>MVVM Pattern</strong> – Clean architecture and testability</li>
+            <li><strong>OpenCV.NET</strong> – Processing blocks for image operations</li>
+            <li><strong>Reactive Extensions (Rx)</strong> – Event-driven pipeline updates</li>
+        </ul>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li>Drag-and-drop block system with 30+ pre-built processing nodes</li>
+            <li>Real-time preview of intermediate results</li>
+            <li>Custom block creation framework for advanced users</li>
+            <li>Property inspector for block parameter tuning</li>
+            <li>Save/load pipeline layouts with project management</li>
+            <li>Performance analytics and profiling tools</li>
+        </ul>
+
+        <h3>Architecture Highlights</h3>
+        <p>The application uses a plugin-based architecture where each processing block implements a common interface. Pipelines are executed as directed acyclic graphs (DAGs) with automatic dependency resolution. Data flows between blocks in real-time, enabling interactive parameter adjustment and instant visual feedback.</p>
+
+        <h3>Impact & Use Cases</h3>
+        <p>Reduced development time for image processing tasks by 60%. Used in quality control departments for building inspection workflows without IT support. Trained operators now prototype and deploy custom vision checks independently, dramatically accelerating process optimization cycles.</p>
+    </section>
+</main>
+<footer class="footer">
+    <p>&copy; 2026 Dinh Hoang Anh. All rights reserved.</p>
+</footer>
+</body>
+</html>
